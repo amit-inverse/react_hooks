@@ -11,3 +11,7 @@ But, after the introduction of React hooks from version 16.8, we can now use sta
 In other words, hooks are the fnctions that make functional components work like class components.
 
 React hooks simplify the code, improves the readability, reusability, and overall performance of the application.
+
+## useState
+
+useState is a React hook which creates a 'state variable'. It helps us to track state in a component & updates the user interface when state changes.
