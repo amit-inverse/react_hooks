@@ -1,35 +1,93 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import UseStateHook from "./pages/UseStateHook";
+import UseEffectHook from "./pages/UseEffectHook";
+import UseRefHook from "./pages/UseRefHook";
+import UseMemoHook from "./pages/UseMemoHook";
+import UseCallbackHook from "./pages/UseCallbackHook";
+import UseContextHook from "./pages/UseContextHook";
+import UseReducerHook from "./pages/UseReducerHook";
+import UseLayoutEffectHook from "./pages/UseLayoutEffectHook";
+import CustomHook from "./pages/CustomHook";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <BrowserRouter>
+      <div
+        style={{
+          marginBottom: "10px",
+          paddingBottom: "10px",
+          borderBottom: "1px solid blue",
+        }}
+      >
+        <Link
+          style={{ marginRight: "20px", textDecoration: "none", color: "blue" }}
+          to="/useState"
+        >
+          useState
+        </Link>
+        <Link
+          style={{ marginRight: "20px", textDecoration: "none", color: "blue" }}
+          to="/useEffect"
+        >
+          useEffect
+        </Link>
+        <Link
+          style={{ marginRight: "20px", textDecoration: "none", color: "blue" }}
+          to="/useRef"
+        >
+          useRef
+        </Link>
+        <Link
+          style={{ marginRight: "20px", textDecoration: "none", color: "blue" }}
+          to="/useMemo"
+        >
+          useMemo
+        </Link>
+        <Link
+          style={{ marginRight: "20px", textDecoration: "none", color: "blue" }}
+          to="/useCallback"
+        >
+          useCallback
+        </Link>
+        <Link
+          style={{ marginRight: "20px", textDecoration: "none", color: "blue" }}
+          to="/useContext"
+        >
+          useContext
+        </Link>
+        <Link
+          style={{ marginRight: "20px", textDecoration: "none", color: "blue" }}
+          to="/useReducer"
+        >
+          useReducer
+        </Link>
+        <Link
+          style={{ marginRight: "20px", textDecoration: "none", color: "blue" }}
+          to="/useLayoutEffect"
+        >
+          useLayoutEffect
+        </Link>
+        <Link
+          style={{ marginRight: "20px", textDecoration: "none", color: "blue" }}
+          to="/customHook"
+        >
+          customHook
+        </Link>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      <Routes>
+        <Route path="useState" element={<UseStateHook />} />
+        <Route path="useEffect" element={<UseEffectHook />} />
+        <Route path="useRef" element={<UseRefHook />} />
+        <Route path="useMemo" element={<UseMemoHook />} />
+        <Route path="useCallback" element={<UseCallbackHook />} />
+        <Route path="useContext" element={<UseContextHook />} />
+        <Route path="useReducer" element={<UseReducerHook />} />
+        <Route path="useLayoutEffect" element={<UseLayoutEffectHook />} />
+        <Route path="customHook" element={<CustomHook />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
